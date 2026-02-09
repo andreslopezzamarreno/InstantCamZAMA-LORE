@@ -1,36 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Cámara Mejorada</title>
-<style>
-  video, canvas {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    margin-bottom: 12px;
-  }
-  #gallery img {
-    width: 100px;
-    margin: 5px;
-    border-radius: 8px;
-  }
-</style>
-</head>
-<body>
-<h1>Cámara Mejorada Web</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canvas a Servidor</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        text-align: center;
+        margin: 20px;
+      }
+      canvas {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 12px;
+        border: 1px solid #ccc;
+      }
+      #gallery img {
+        width: 100px;
+        margin: 5px;
+        border-radius: 8px;
+      }
+      button {
+        margin: 5px;
+        padding: 10px 15px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Canvas WebGL → Servidor</h1>
+    <video id="video" autoplay playsinline style="display:none"></video>
+    <canvas id="canvas" width="400" height="300"></canvas>
+    <br />
+    <button id="capture">Tomar foto</button>
+    <button id="switch">Cambiar cámara</button>
+    <p id="contador"></p>
+    <div id="gallery"></div>
 
-<video id="video" autoplay playsinline></video>
-<canvas id="canvas" style="display:none;"></canvas>
-
-<br>
-<button id="capture">Tomar foto</button>
-<button id="switch">Cambiar cámara</button>
-
-<p id="contador"></p>
-<div id="gallery"></div>
-
-<script src="app.js"></script>
-</body>
+    <script src="https://twgljs.org/dist/4.x/twgl-full.min.js"></script>
+    <script src="app.js"></script>
+  </body>
 </html>
